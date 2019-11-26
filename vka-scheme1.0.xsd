@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="VersionType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="1.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PercentageType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+ 
+  <xs:simpleType name="DetailTypeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Basic|Consumption"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="UnitType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType> 
+  
+  <xs:complexType name="ValueType">
+    <xs:simpleContent>
+	  <xs:extension base="xs:decimal">
+        <xs:attribute name="Unit" type="UnitType" use="required" />
+	  </xs:extension>
+	</xs:simpleContent>
+  </xs:complexType>
+
+   
+  <xs:complexType name="CostsDetailType">
+    <xs:sequence>
+	  <xs:element name="DetailType" type="DetailTypeType"/>
+      <xs:element name="Percentage" type="PercentageType"/>
+      <xs:element name="Value" type="ValueType"/>
+	  <xs:element name="LevelStart" type="ValueType" minOccurs="0"/>
+ 	  <xs:element name="LevelEnd" type="ValueType" minOccurs="0"/>
+	</xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CostsType">
+    <xs:sequence>
+      <xs:element name="Value" type="ValueType"/>
+      <xs:element name="CostsDetail" type="CostsDetailType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ContractType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string" />
+      <xs:element name="OccupantId" type="xs:string" />
+	  <xs:element name="OccupantName" type="xs:string" />
+      <xs:element name="PeriodStart" type="xs:date" />
+      <xs:element name="PeriodEnd" type="xs:date" />
+      <xs:element name="Address1" type="xs:string" minOccurs="0" />
+	  <xs:element name="Address2" type="xs:string" minOccurs="0" />
+	  <xs:element name="Address3" type="xs:string" minOccurs="0" />
+	  <xs:element name="Address4" type="xs:string" minOccurs="0" />
+	  <xs:element name="Address5" type="xs:string" minOccurs="0" />
+	  <xs:element name="Address6" type="xs:string" minOccurs="0" />
+      <xs:element name="Costs" type="CostsType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CostUnitType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string" />
+	  <xs:element name="Property" type="xs:string" />
+	  <xs:element name="Address" type="xs:string" />
+      <xs:element name="Description" type="xs:string" minOccurs="0" />
+      <xs:element name="Rooms" type="xs:decimal"  minOccurs="0" />
+      <xs:element name="SquareMeter"  type="xs:decimal"  minOccurs="0" />
+      <xs:element name="CubicMeter"  type="xs:decimal"  minOccurs="0" />
+      <xs:element name="Rate" type="xs:decimal"  minOccurs="0" />
+      <xs:element name="Contract" type="ContractType" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AllocationType">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" />
+	  <xs:element name="CostType" type="xs:string" />
+      <xs:element name="Percentage" type="PercentageType"/>
+	  <xs:element name="TotalValue" type ="ValueType" minOccurs="0"/>
+      <xs:element name="CostUnit" type="CostUnitType"  minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="CostCenterType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string" />
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="ExternalId" type="xs:string" minOccurs="0"/>
+      <xs:element name="TotalValue" type ="ValueType" minOccurs="0"/>
+      <xs:element name="Allocation" type="AllocationType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CostAccountingType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string" />
+      <xs:element name="Description" type="xs:string" />
+      <xs:element name="PeriodStart" type="xs:date" />
+      <xs:element name="PeriodEnd" type="xs:date" />
+      <xs:element name="CostCenter" type="CostCenterType" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ContactType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="Address" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="VkaDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InterfaceName" type="xs:string" />
+        <xs:element name="InterfaceVersion" type="VersionType"/>
+        <xs:element name="UserAgent" type="xs:string" />
+        <xs:element name="PropertyManager" type="ContactType" minOccurs="0" />
+        <xs:element name="ServiceProvider" type="ContactType" minOccurs="0" />
+        <xs:element name="RequestDate" type="xs:date" />
+        <xs:element name="ResponseDate" type="xs:date"  minOccurs="0"/>
+        <xs:element name="CostAccounting" type="CostAccountingType" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ 
+</xs:schema>

@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<VkaDocument>
+  <InterfaceName>DTA-VKA</InterfaceName>
+  <InterfaceVersion>1.0</InterfaceVersion>
+  <UserAgent>Rimo R4</UserAgent>
+  <PropertyManager>
+    <Name>W&amp;W Immo Informatik AG</Name>
+    <Address>Obfelderstrasse 39, 8910 Affoltern am Albis</Address>
+  </PropertyManager>
+  <ServiceProvider>
+    <Name>NeoVac</Name>
+  </ServiceProvider>
+  <RequestDate>2017-10-10</RequestDate>
+  <ResponseDate>2017-10-15</ResponseDate>
+  <CostAccounting>
+    <Id>1000103</Id>
+    <Description>Heizkostenabrechnung Löwenstrasse 1, 8910 Affoltern am Albis</Description>
+    <PeriodStart>2017-01-07</PeriodStart>
+    <PeriodEnd>2018-06-30</PeriodEnd>
+    <CostCenter>
+      <Id>10</Id>
+      <Description>Energiekosten</Description>
+      <ExternalId>Heizung0897013_E</ExternalId>
+	  <TotalValue Unit="kWh">187752.05</TotalValue>
+      <Allocation>
+        <Description>Raumerwärmung</Description>
+        <CostType>01</CostType>
+        <Percentage>75.00</Percentage>
+		<TotalValue Unit="o/oo">750.00</TotalValue>
+        <CostUnit>
+          <Id>10001.10001</Id>
+          <Property>Löwenweg 1</Property>
+          <Address>Löwenweg 1, 8910 Affoltern am Albis</Address>
+		  <Description>4.5 Zimmerwohnung EG rechts</Description>
+          <Rooms>4.5</Rooms>
+          <SquareMeter>120</SquareMeter>
+          <Contract>
+            <Id>1</Id>
+            <OccupantId>10001.1000101</OccupantId>
+            <OccupantName>Hans Muster</OccupantName>
+            <PeriodStart>2016-01-07</PeriodStart>
+			<PeriodEnd>2017-06-30</PeriodEnd>
+            <Address1>Hans Muster</Address1>
+			<Address2>Löwenweg 1</Address2>
+			<Address3>8910 Affoltern am Albis</Address3>
+			<Costs>
+			  <Value Unit="o/oo">350.00</Value>
+			  <CostsDetail>
+			   <DetailType>Basic</DetailType>
+			   <Percentage>30.00</Percentage>
+			   <Value Unit="m2">95.20</Value>
+			  </CostsDetail>
+			  <CostsDetail>
+			   <DetailType>Consumption</DetailType>
+			   <Percentage>70.00</Percentage>
+			   <Value Unit="kWh">86301.00</Value>
+			  </CostsDetail>
+			</Costs>
+          </Contract>
+        </CostUnit>
+		<CostUnit>
+          <Id>10001.10002</Id>
+          <Property>Löwenweg 1</Property>
+          <Address>Löwenweg 1, 8910 Affoltern am Albis</Address>
+		  <Description>4.5 Zimmerwohnung EG links</Description>
+          <Rooms>4.5</Rooms>
+          <SquareMeter>120</SquareMeter>
+          <Contract>
+            <Id>1</Id>
+            <OccupantId>10001.1000201</OccupantId>
+            <OccupantName>Tim Muster</OccupantName>
+            <PeriodStart>2016-07-01</PeriodStart>
+			<PeriodEnd>2017-03-31</PeriodEnd>
+            <Address1>Tim Muster</Address1>
+			<Address2>Löwenweg 1</Address2>
+			<Address3>8910 Affoltern am Albis</Address3>
+			<Costs>
+			  <Value Unit="o/oo">250.00</Value>
+			  <CostsDetail>
+			   <DetailType>Basic</DetailType>
+			   <Percentage>30.00</Percentage>
+			   <Value Unit="m2">100.50</Value>
+			  </CostsDetail>
+			  <CostsDetail>
+			   <DetailType>Consumption</DetailType>
+			   <Percentage>70.00</Percentage>
+			   <Value Unit="kWh">50250.25</Value>
+			  </CostsDetail>
+			</Costs>
+          </Contract>
+          <Contract>
+            <Id>2</Id>
+            <OccupantId>10001.1000202</OccupantId>
+            <OccupantName>Fiona Muster</OccupantName>
+            <PeriodStart>2017-04-01</PeriodStart>
+			<PeriodEnd>2017-06-30</PeriodEnd>
+            <Address1>Fiona Muster</Address1>
+			<Address2>Löwenweg 1</Address2>
+			<Address3>8910 Affoltern am Albis</Address3>
+			<Costs>
+			  <Value Unit="o/oo">150.00</Value>
+			  <CostsDetail>
+			   <DetailType>Basic</DetailType>
+			   <Percentage>30.00</Percentage>
+			   <Value Unit="m2">100.50</Value>
+			  </CostsDetail>
+			  <CostsDetail>
+			   <DetailType>Consumption</DetailType>
+			   <Percentage>70.00</Percentage>
+			   <Value Unit="kWH">51200.80</Value>
+			  </CostsDetail>
+			</Costs>
+          </Contract>
+        </CostUnit>
+      </Allocation>
+      <Allocation>
+        <Description>Warmwasser</Description>
+        <CostType>02</CostType>
+        <Percentage>25.00</Percentage>
+		<TotalValue Unit="o/oo">250.00</TotalValue>
+        <CostUnit>
+          <Id>10001.10001</Id>
+          <Property>Löwenweg 1</Property>
+          <Address>Löwenweg 1, 8910 Affoltern am Albis</Address>
+		  <Description>4.5 Zimmerwohnung EG rechts</Description>
+          <Rooms>4.5</Rooms>
+          <SquareMeter>120</SquareMeter>
+          <Contract>
+            <Id>1</Id>
+            <OccupantId>10001.1000101</OccupantId>
+            <OccupantName>Hans Muster</OccupantName>
+            <PeriodStart>2016-01-07</PeriodStart>
+			<PeriodEnd>2017-06-30</PeriodEnd>
+            <Address1>Hans Muster</Address1>
+			<Address2>Löwenweg 1</Address2>
+			<Address3>8910 Affoltern am Albis</Address3>
+			<Costs>
+			  <Value Unit="o/oo">100.00</Value>
+			  <CostsDetail>
+			   <DetailType>Basic</DetailType>
+			   <Percentage>30.00</Percentage>
+			   <Value Unit="m2">95.20</Value>
+			  </CostsDetail>
+			  <CostsDetail>
+			   <DetailType>Consumption</DetailType>
+			   <Percentage>70.00</Percentage>
+			   <Value Unit="m3">700.65</Value>
+			  </CostsDetail>
+			</Costs>
+          </Contract>
+        </CostUnit>
+		<CostUnit>
+          <Id>10001.10002</Id>
+          <Property>Löwenweg 1</Property>
+          <Address>Löwenweg 1, 8910 Affoltern am Albis</Address>
+		  <Description>4.5 Zimmerwohnung EG links</Description>
+          <Rooms>4.5</Rooms>
+          <SquareMeter>120</SquareMeter>
+          <Contract>
+            <Id>1</Id>
+            <OccupantId>10001.1000201</OccupantId>
+            <OccupantName>Tim Muster</OccupantName>
+            <PeriodStart>2016-07-01</PeriodStart>
+			<PeriodEnd>2017-03-31</PeriodEnd>
+            <Address1>Tim Muster</Address1>
+			<Address2>Löwenweg 1</Address2>
+			<Address3>8910 Affoltern am Albis</Address3>
+			<Costs>
+			  <Value Unit="o/oo">125.00</Value>
+			  <CostsDetail>
+			   <DetailType>Basic</DetailType>
+			   <Percentage>30.00</Percentage>
+			   <Value Unit="m2">100.50</Value>
+			  </CostsDetail>
+			  <CostsDetail>
+			   <DetailType>Consumption</DetailType>
+			   <Percentage>70.00</Percentage>
+			   <Value Unit="m3">320.75</Value>
+			  </CostsDetail>
+			</Costs>
+          </Contract>
+          <Contract>
+            <Id>2</Id>
+            <OccupantId>10001.1000202</OccupantId>
+            <OccupantName>Fiona Muster</OccupantName>
+            <PeriodStart>2017-04-01</PeriodStart>
+			<PeriodEnd>2017-06-30</PeriodEnd>
+            <Address1>Fiona Muster</Address1>
+			<Address2>Löwenweg 1</Address2>
+			<Address3>8910 Affoltern am Albis</Address3>
+			<Costs>
+			  <Value Unit="o/oo">75.00</Value>
+			  <CostsDetail>
+			   <DetailType>Basic</DetailType>
+			   <Percentage>30.00</Percentage>
+			   <Value Unit="m2">100.50</Value>
+			  </CostsDetail>
+			  <CostsDetail>
+			   <DetailType>Consumption</DetailType>
+			   <Percentage>70.00</Percentage>
+			   <Value Unit="m3">100.80</Value>
+			  </CostsDetail>
+			</Costs>
+          </Contract>
+        </CostUnit>
+      </Allocation>
+    </CostCenter>
+  </CostAccounting>
+</VkaDocument>
